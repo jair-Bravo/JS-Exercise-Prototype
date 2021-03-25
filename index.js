@@ -115,10 +115,10 @@ Baby.prototype.play = function() {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. a pronoun to use in place of an object.
+    2. Gives you the object's context.
+    3. Nothing to do where the function is written, but where and when the function is called.
+    4. If you dont see "new", "apply", "blind", "this" is not in an object, then "this" is most likely global
   */
   
   
