@@ -109,13 +109,7 @@ Baby.prototype.play = function() {
 }
 
 
-  // Baby.prototype = Object.create(Person,prototype);
-  // Baby.prototype.play = function (){
-  //   return `Playing with ${this.favoriteToy}`
-  // }
 
-  // const jair = new Baby ('Jair', 27, 'soccer ball');
-  // console.log(jair.toString());
   
   
   /* 
