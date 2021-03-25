@@ -45,13 +45,18 @@ function Airplane(name) {
     this.stomach = [];
   }
 
-  Person.prototype.eat = function(edible){
+  Person.prototype.eat = function(someFood){
     if (this.stomach.length < 10){
-      this.stomach.push(edible);
+      this.stomach.push(someFood);
     }
   }
+
   Person.prototype.poop = function(){
-    return `${this.name}, ${this.age}`;
+    this.stomach = [];
+  
+  }
+  Person.prototype.toString = function(){
+  return `${this.name}, ${this.age}`;
   }
   
   
@@ -79,10 +84,10 @@ function Airplane(name) {
     this.tank = this.tank + gallons;
   }
   
-  Car.prototype.drive = function(distance) {
-    this.odometer += distance
-    return this.tank < distance / this.milesPerGallon ? `I ran out of fuel at ${this.odometer}` : false;
-  }
+  // Car.prototype.drive = function(distance) {
+  //   this.odometer += distance
+  //   return this.tank < distance / this.milesPerGallon ? `I ran out of fuel at ${this.odometer}` : false;
+  // }
 
 
   /*
@@ -93,12 +98,24 @@ function Airplane(name) {
           + Should return a string "Playing with x", x being the favorite toy.
   */
  function Baby(name, age, favoriteToy) {
-   Person.call(this, name, age);
-   this.favoriteToy = favoriteToy;
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
   }
- 
-  const jair = new Baby ('Jair', 27, 'soccer ball');
-  console.log(jair.toString());
+  
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play = function() {
+  return `Playing with ${this.favoriteToy}`
+}
+
+
+  // Baby.prototype = Object.create(Person,prototype);
+  // Baby.prototype.play = function (){
+  //   return `Playing with ${this.favoriteToy}`
+  // }
+
+  // const jair = new Baby ('Jair', 27, 'soccer ball');
+  // console.log(jair.toString());
   
   
   /* 
